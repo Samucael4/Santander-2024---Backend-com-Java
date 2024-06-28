@@ -1,5 +1,6 @@
 package edu.java_basico.logica;
 //como pode ver, isso é um package. numa IDE seria, seria apenas uma pasta chamada edu.java_basico.logica
+import java.util.Scanner;
 
 //mas como é o vscode, tenho que ficar criando pastas para cada camada.
 
@@ -44,7 +45,20 @@ public class Anotacoes {
     //logicos && ||
 
 
-
+    /*
+     * usando o terminal
+     * public static void main (String[] args){
+     * String nome = args [0];
+     * int idade = args [1];
+     * }
+     * argumentos: no terminal: java <nome da classe> <arg 1> ... <arg n>
+     * posso tbm deixar configurado em json os args para toda vez q dar run, nao ter q passar os args
+     * 
+     * Scanner
+     */
+    Scanner scanner = new Scanner(System.in);
+    double altura = scanner.nextDouble();
+    String nome = scanner.next();
     
 
 }
