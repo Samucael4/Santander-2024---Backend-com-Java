@@ -29,9 +29,17 @@ public class Anotacoes {
         //olhar classe alunos
         
         //construtores
-        
+
         
          //enums x interfaces
+         //é um conjuntos de objtos. se eu eu tiver 27 estado br, eu tenho 27 objetos q pode ter nome
+         //sigla, regiao, etc. pode ter metodo construtor e moetodos normais, atributos
+         //enums representa um conjunto fixo de constantes. Eles são usados para definir 
+         //um tipo que pode ter um número específico de valores possíveis, 
+         //tornando o código mais legível e seguro.
+
+         //Enums podem ter campos, métodos e construtores. Aqui está um exemplo mais avançado:(olhar arquivos de enums)
+
 
         
          //uml
