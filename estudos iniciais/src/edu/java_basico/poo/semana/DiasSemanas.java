@@ -1,4 +1,4 @@
-package edu.java_basico.poo;
+package edu.java_basico.poo.semana;
 
 public enum DiasSemanas {
     //exemplo básico de definição de um enum:

@@ -1,0 +1,1 @@
+4 pilars: encapsulamento, herenca, abstacao, polimorfismo

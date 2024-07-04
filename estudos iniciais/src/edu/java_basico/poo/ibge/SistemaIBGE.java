@@ -1,4 +1,4 @@
-package edu.java_basico.poo;
+package edu.java_basico.poo.ibge;
 
 public class SistemaIBGE {
     public static void main(String[] args) {

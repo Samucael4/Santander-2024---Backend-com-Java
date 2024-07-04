@@ -1,4 +1,4 @@
-package edu.java_basico.poo;
+package edu.java_basico.poo.ibge;
 
 public enum EstadosBrasileiros {
     SAO_PAULO("SP", "São Paulo"),

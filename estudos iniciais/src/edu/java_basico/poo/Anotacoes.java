@@ -31,24 +31,31 @@ public class Anotacoes {
         //construtores
 
         
-         //enums x interfaces
-         //é um conjuntos de objtos. se eu eu tiver 27 estado br, eu tenho 27 objetos q pode ter nome
-         //sigla, regiao, etc. pode ter metodo construtor e moetodos normais, atributos
-         //enums representa um conjunto fixo de constantes. Eles são usados para definir 
-         //um tipo que pode ter um número específico de valores possíveis, 
-         //tornando o código mais legível e seguro.
+        //enums x interfaces
+        //é um conjuntos de objtos. se eu eu tiver 27 estado br, eu tenho 27 objetos q pode ter nome
+        //sigla, regiao, etc. pode ter metodo construtor e moetodos normais, atributos
+        //enums representa um conjunto fixo de constantes. Eles são usados para definir 
+        //um tipo que pode ter um número específico de valores possíveis, 
+        //tornando o código mais legível e seguro.
 
          //Enums podem ter campos, métodos e construtores. Aqui está um exemplo mais avançado:(olhar arquivos de enums)
 
 
         
-         //uml
+        //uml
+        /*
+         linguagem de modelagem unificada
+         é a reprensetação grafica de como vai ficar o projeto
+         tipos de diagramas, elemntos e relacionamentos
+         digramas: estrutural e comportamental, classes e objetos
+         olhar arquivo txt com nome de uml
+         */
+        
+        //java beans
 
         
-         //java beans
-
-        
-         //pilares poo(encapsulamente, herenca, polimorfismo, abstracao...)
+        //pilares poo(encapsulamente, herenca, polimorfismo, abstracao, interface...)
+        //olhar documento pilares.txt
 
 
     }

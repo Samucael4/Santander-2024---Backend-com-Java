@@ -1,4 +1,4 @@
-package edu.java_basico.poo;
+package edu.java_basico.poo.semana;
 
 public class EnumsDiaSemana {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package edu.java_basico.poo;
+package edu.java_basico.poo.escola;
 
 public class Escola {
     public static void main(String[] args) {

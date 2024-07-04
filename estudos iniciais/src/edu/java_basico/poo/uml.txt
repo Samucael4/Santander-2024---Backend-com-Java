@@ -1,0 +1,7 @@
+estrutura da classe:
+    identificaçao
+    atributos
+    operaçoes
+relacionamentos entre classes
+
+olhar staruml, draw.io, lucidchart
