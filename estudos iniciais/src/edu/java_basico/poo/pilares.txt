@@ -1,1 +1,14 @@
 4 pilars: encapsulamento, herenca, abstacao, polimorfismo
+os pilares foram trabalhados nas pastas dentro de poo
+
+Interfaces em Java são um tipo de referência que é similar a uma classe, 
+mas são usadas para especificar métodos que uma classe deve implementar. 
+Elas fornecem uma maneira de garantir que diferentes classes implementem um 
+conjunto específico de métodos, sem especificar como esses métodos são implementados.
+
+Características das Interfaces
+Métodos Abstratos: Todos os métodos em uma interface são implicitamente public 
+e abstract (exceto métodos default e static que foram introduzidos no Java 8).
+Constantes: Todas as variáveis definidas em uma interface são implicitamente 
+public, static, e final.
+Herança Múltipla: Uma classe pode implementar várias interfaces, permitindo herança múltipla.
