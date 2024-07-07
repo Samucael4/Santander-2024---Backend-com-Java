@@ -1,0 +1,104 @@
+DO QUE SE TRATA?
+collection framework API
+collection é uma estrutura de dados p/ agrupar elementos em uma unica unidade. 
+os elementos precisam ser objetos, ex: nao dá para criar collection de int, mas da de integer.
+4 princiapais collections: List, Set, Queue, Map
+
+nesta pasta, há uma imagem da collections em java, e nela há a interface Collections. 
+procure depois os métodos desta interface
+map nao implementa de collection, mas tem metodos parecidos, porem com outros nomes.
+
+generics type
+um tipo generico é uma classe generica que é parametrizada em relação a tipo
+você pode criar classes, interfaces e métodos que funcionam com qualquer tipo de dados
+
+Exemplo de Classe Genérica
+public class Caixa<T> {
+    private T conteudo;
+
+    public void setConteudo(T conteudo) {
+        this.conteudo = conteudo;
+    }
+
+    public T getConteudo() {
+        return conteudo;
+    }
+
+    public static void main(String[] args) {
+        Caixa<String> caixaDeTexto = new Caixa<>();
+        caixaDeTexto.setConteudo("Olá, Mundo!");
+        System.out.println(caixaDeTexto.getConteudo()); // Saída: Olá, Mundo!
+
+        Caixa<Integer> caixaDeNumero = new Caixa<>();
+        caixaDeNumero.setConteudo(123);
+        System.out.println(caixaDeNumero.getConteudo()); // Saída: 123
+    }
+}
+
+Exemplo de Método Genérico
+public class Util {
+    public static <T> void imprimirArray(T[] array) {
+        for (T elemento : array) {
+            System.out.print(elemento + " ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        Integer[] numeros = {1, 2, 3, 4, 5};
+        String[] palavras = {"um", "dois", "três"};
+
+        Util.imprimirArray(numeros); // Saída: 1 2 3 4 5
+        Util.imprimirArray(palavras); // Saída: um dois três
+    }
+}
+
+Exemplo de Interface Genérica
+public interface Repositorio<T> {
+    void adicionar(T item);
+    T obter(int id);
+}
+
+public class RepositorioDeUsuarios implements Repositorio<Usuario> {
+    private Map<Integer, Usuario> usuarios = new HashMap<>();
+
+    @Override
+    public void adicionar(Usuario usuario) {
+        usuarios.put(usuario.getId(), usuario);
+    }
+
+    @Override
+    public Usuario obter(int id) {
+        return usuarios.get(id);
+    }
+}
+
+nos exemplos, usamos a letra T, mas pode aparecer outras como:
+E(elemento), K(chave), N(numero), T(tipo), V(valor), S, U, V,....
+
+usando generics, nao precisa fazer cast do tipo para iterar, mas se nao usar generics,
+terá q fazer cast. ex:
+
+Set conjunto = new HashSet();
+for(Object elemento: conjunto){
+    String str = (String) elemento; //cast sendo feito aqui
+    sysout(str)
+}
+
+Set<String> conjunto = new HashSet<>();
+for(Object elemento: conjunto){
+    
+    sysout(elemento) //nao fiz cast, passei direto
+}
+
+comparable x comparator
+sao interfaces
+
+
+LIST
+
+
+SET INTERFACE
+
+MAP INTERFACE
+
