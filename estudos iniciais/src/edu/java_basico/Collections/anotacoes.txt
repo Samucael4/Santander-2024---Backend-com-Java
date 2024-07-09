@@ -91,9 +91,18 @@ for(Object elemento: conjunto){
     sysout(elemento) //nao fiz cast, passei direto
 }
 
-comparable x comparator
+comparable x comparator (procurar no youtube / doc outros exemplos p/ aprender)
 sao interfaces
-
+servem para comprar e ordenar elementos dentro de uma coleção
+por ex: colocar em ordem alfabetica
+    comparable: ordena a colecao com base em apenas um elemento, como id, nome, ....
+                afeta a classe original, a classe atual é modificada
+                compareTo(): metodo para ordenar
+                pode ordenar elemtnos da lista usando Collections.sort(List)
+    comparator: ordena a colecao com base em varios elementos.
+                O Comparator não afeta a classe original, a classe atual não é modificada
+                ordenar os elementos da lista do tipo Comparator usando o método Collections.sort(List, Comparator)
+                O Comparator fornece o método compare() para ordenar elementos.
 
 LIST
 
