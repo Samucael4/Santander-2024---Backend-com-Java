@@ -1,0 +1,6 @@
+interface list
+coleção ordenada, pode elemetnso duplicados
+
+as calsses mais comuns sao: linkedlist e arraylist
+
+alguns metodods: sort, shuffle, reverse, binarySearch

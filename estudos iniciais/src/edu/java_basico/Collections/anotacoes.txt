@@ -104,8 +104,9 @@ por ex: colocar em ordem alfabetica
                 ordenar os elementos da lista do tipo Comparator usando o método Collections.sort(List, Comparator)
                 O Comparator fornece o método compare() para ordenar elementos.
 
-LIST
+para os abaixo, ver respectivas pastas
 
+LIST
 
 SET INTERFACE
 
