@@ -1,0 +1,53 @@
+a interface Map em Java, que é usada para armazenar pares de chave-valor. Cada chave no Map é única e mapeia a exatamente um valor.
+
+Introdução ao Map
+A interface Map faz parte do pacote java.util. As principais implementações de Map são:
+    HashMap
+    LinkedHashMap
+    TreeMap
+    Hashtable
+Cada uma dessas implementações tem características específicas:
+
+HashMap:
+Não mantém nenhuma ordem específica.
+Melhor performance para operações básicas (put, get, remove).
+
+LinkedHashMap:
+Mantém a ordem de inserção das entradas.
+Levemente mais lento que HashMap devido à manutenção da ordem de inserção.
+
+TreeMap:
+Mantém as entradas ordenadas de acordo com a ordem natural das chaves ou por um comparador fornecido.
+Implementa a interface NavigableMap, que oferece métodos adicionais para navegação de mapas.
+
+Hashtable:
+Similar ao HashMap, mas é sincronizado e, portanto, é seguro para uso em ambientes multithread.
+
+Principais Métodos do Map
+
+Adicionar ou Atualizar Entradas:
+    V put(K key, V value): Adiciona uma entrada (chave-valor) ao mapa. Se a chave já estiver presente, o valor antigo é substituído pelo novo valor.
+
+Obter Valores:
+    V get(Object key): Retorna o valor associado à chave especificada.
+
+Remover Entradas:
+    V remove(Object key): Remove a entrada para a chave especificada, se estiver presente.
+
+Verificar Presença de Chaves ou Valores:
+    boolean containsKey(Object key): Retorna true se este mapa contiver uma associação para a chave especificada.
+boolean containsValue(Object value): Retorna true se este mapa mapear uma ou mais chaves para o valor especificado.
+
+Consultar Tamanho:
+    int size(): Retorna o número de associações chave-valor neste mapa.
+
+Limpar o Mapa:
+    void clear(): Remove todas as associações deste mapa.
+
+Verificar se o Mapa Está Vazio:
+    boolean isEmpty(): Retorna true se este mapa não contiver associações chave-valor.
+
+Obter Conjuntos de Chaves, Valores e Entradas:
+    Set<K> keySet(): Retorna um conjunto de chaves contidas neste mapa.
+    Collection<V> values(): Retorna uma coleção de valores contidos neste mapa.
+    Set<Map.Entry<K, V>> entrySet(): Retorna um conjunto de associações chave-valor contidas neste mapa.
