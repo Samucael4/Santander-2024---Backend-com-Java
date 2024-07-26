@@ -51,3 +51,11 @@ Obter Conjuntos de Chaves, Valores e Entradas:
     Set<K> keySet(): Retorna um conjunto de chaves contidas neste mapa.
     Collection<V> values(): Retorna uma coleção de valores contidos neste mapa.
     Set<Map.Entry<K, V>> entrySet(): Retorna um conjunto de associações chave-valor contidas neste mapa.
+
+
+Os Maps são uma parte essencial da biblioteca de coleções do Java e são usados para armazenar pares de chave-valor. 
+Dependendo das necessidades do seu aplicativo, você pode escolher a implementação mais adequada:
+
+Use HashMap para performance geral.
+Use LinkedHashMap quando a ordem de inserção for importante.
+Use TreeMap para manter as entradas ordenadas.

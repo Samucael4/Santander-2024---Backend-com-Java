@@ -40,6 +40,7 @@ public class ExArrayList {
 
         // verificar se esta vazia
         boolean vazia = lista.isEmpty();
+        System.out.println(vazia);
 
 
         for (String elemento : lista) {
