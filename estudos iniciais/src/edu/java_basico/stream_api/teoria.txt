@@ -1,0 +1,249 @@
+A Stream API permite processar coleções de forma funcional e paralela, facilitando operações como filtro, mapeamento, e redução.
+
+Principais Conceitos
+    Stream: Uma sequência de elementos que suporta operações sequenciais e paralelas.
+
+    Operações Intermediárias: Transformam uma stream em outra stream. Essas operações são lazy, 
+    ou seja, são executadas apenas quando uma operação terminal é chamada. Exemplos incluem filter, map, sorted.
+    
+    Operações Terminais: Produzem um resultado ou efeito colateral e terminam o processamento da stream. Exemplos incluem forEach, collect, reduce.
+
+====================================================================================================
+Criação de Streams
+Streams podem ser criadas a partir de diversas fontes, como coleções, arrays, ou geradores de elementos.
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
+
+public class CriacaoStreams {
+    public static void main(String[] args) {
+        // A partir de uma coleção
+        List<String> lista = Arrays.asList("a", "b", "c");
+        Stream<String> stream1 = lista.stream();
+
+        // A partir de um array
+        String[] array = {"a", "b", "c"};
+        Stream<String> stream2 = Arrays.stream(array);
+
+        // A partir de valores individuais
+        Stream<String> stream3 = Stream.of("a", "b", "c");
+
+        // A partir de um gerador
+        Stream<Double> stream4 = Stream.generate(Math::random).limit(5);
+
+        // A partir de uma iteração
+        Stream<Integer> stream5 = Stream.iterate(1, n -> n + 1).limit(5);
+    }
+}
+
+====================================================================================================
+Operações Intermediárias
+As operações intermediárias transformam uma stream em outra. Vamos ver alguns exemplos comuns.
+
+Filter: Filtra elementos com base em um predicado.
+Map: Aplica uma função a cada elemento e retorna uma nova stream.
+Sorted: Ordena os elementos da stream.
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class OperacoesIntermediarias {
+    public static void main(String[] args) {
+        List<String> lista = Arrays.asList("a1", "a2", "b1", "c2", "c1");
+
+        List<String> resultado = lista.stream()
+            .filter(s -> s.startsWith("c"))
+            .map(String::toUpperCase)
+            .sorted()
+            .collect(Collectors.toList());
+
+        System.out.println(resultado); // Saída: [C1, C2]
+    }
+}
+====================================================================================================
+Operações Terminais
+As operações terminais produzem um resultado ou efeito colateral.
+
+forEach: Aplica uma ação a cada elemento da stream.
+collect: Converte a stream em uma coleção ou outro tipo de resultado.
+reduce: Reduz os elementos da stream a um único valor.
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
+
+public class OperacoesTerminais {
+    public static void main(String[] args) {
+        List<Integer> lista = Arrays.asList(1, 2, 3, 4, 5);
+
+        // forEach
+        lista.stream().forEach(System.out::println);
+
+        // collect
+        List<Integer> novaLista = lista.stream().filter(n -> n % 2 == 0).collect(Collectors.toList());
+        System.out.println(novaLista); // Saída: [2, 4]
+
+        // reduce
+        Optional<Integer> soma = lista.stream().reduce((a, b) -> a + b);
+        soma.ifPresent(System.out::println); // Saída: 15
+    }
+}
+
+====================================================================================================
+Operações de Redução e Coleta
+As operações de redução e coleta são usadas para combinar os elementos da stream em uma única estrutura de dados ou valor.
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class ReducaoColeta {
+    public static void main(String[] args) {
+        List<Integer> numeros = Arrays.asList(1, 2, 3, 4, 5);
+
+        // Redução
+        int soma = numeros.stream().reduce(0, Integer::sum);
+        System.out.println("Soma: " + soma); // Saída: 15
+
+        // Coleta
+        List<Integer> pares = numeros.stream().filter(n -> n % 2 == 0).collect(Collectors.toList());
+        System.out.println("Pares: " + pares); // Saída: [2, 4]
+
+        // Coleta para String
+        String listaString = numeros.stream().map(String::valueOf).collect(Collectors.joining(", "));
+        System.out.println("Lista como String: " + listaString); // Saída: "1, 2, 3, 4, 5"
+    }
+}
+====================================================================================================
+Streams Paralelas
+Streams podem ser paralelizadas para aproveitar o processamento multi-thread.
+
+import java.util.Arrays;
+import java.util.List;
+
+public class StreamParalela {
+    public static void main(String[] args) {
+        List<Integer> numeros = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+        // Processamento paralelo
+        int somaParalela = numeros.parallelStream().reduce(0, Integer::sum);
+        System.out.println("Soma Paralela: " + somaParalela); // Saída: 55
+    }
+}
+
+====================================================================================================
+Expressões Lambda
+representar interfaces funcionais (interfaces com um único método abstrato)
+
+Sintaxe de uma Lambda
+A sintaxe básica de uma expressão lambda é:
+
+(parameters) -> expression
+
+Ou, se o corpo da lambda for mais complexo:
+
+(parameters) -> { statements; }
+
+
+Exemplos de Lambda
+
+Sem parâmetros:
+Runnable r = () -> System.out.println("Hello, world!");
+
+Com um parâmetro:
+Consumer<String> c = (s) -> System.out.println(s);
+
+Com múltiplos parâmetros:
+BinaryOperator<Integer> sum = (a, b) -> a + b;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class ExemploLambda {
+    public static void main(String[] args) {
+        List<String> lista = Arrays.asList("a1", "a2", "b1", "c2", "c1");
+
+        // Filtrando, mapeando e coletando com lambdas
+        List<String> resultado = lista.stream()
+            .filter(s -> s.startsWith("c"))
+            .map(s -> s.toUpperCase())
+            .sorted()
+            .collect(Collectors.toList());
+
+        System.out.println(resultado); // Saída: [C1, C2]
+    }
+}
+====================================================================================================
+Referências a Métodos
+As referências a métodos fornecem uma forma conveniente de referenciar métodos ou construtores já existentes sem invocá-los. 
+Elas são frequentemente usadas como uma forma abreviada de expressões lambda.
+
+Tipos de Referências a Métodos
+
+Referência a um método estático:
+// Lambda: (args) -> ClassName.staticMethod(args)
+List<Integer> numeros = Arrays.asList(1, 2, 3);
+numeros.forEach(n -> System.out.println(n)); // Lambda
+numeros.forEach(System.out::println); // Referência a método
+
+Referência a um método de instância de um objeto específico:
+// Lambda: (args) -> instance.method(args)
+List<String> strings = Arrays.asList("a", "b", "c");
+strings.forEach(s -> System.out.println(s)); // Lambda
+strings.forEach(System.out::println); // Referência a método
+
+Referência a um método de instância de um objeto arbitrário de um tipo específico:
+// Lambda: (obj, args) -> obj.instanceMethod(args)
+List<String> strings = Arrays.asList("a", "b", "c");
+strings.stream().map(s -> s.toUpperCase()).forEach(System.out::println); // Lambda
+strings.stream().map(String::toUpperCase).forEach(System.out::println); // Referência a método
+
+Referência a um construtor:
+// Lambda: (args) -> new ClassName(args)
+Supplier<List<String>> supplier = () -> new ArrayList<>(); // Lambda
+Supplier<List<String>> supplier2 = ArrayList::new; // Referência a construtor
+
+
+Uso com a Stream API
+Aqui estão alguns exemplos de referências a métodos com a Stream API:
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class ExemploMethodReference {
+    public static void main(String[] args) {
+        List<String> lista = Arrays.asList("a1", "a2", "b1", "c2", "c1");
+
+        // Filtrando, mapeando e coletando com referências a métodos
+        List<String> resultado = lista.stream()
+            .filter(s -> s.startsWith("c"))
+            .map(String::toUpperCase)
+            .sorted()
+            .collect(Collectors.toList());
+
+        System.out.println(resultado); // Saída: [C1, C2]
+
+        // Imprimindo com referências a métodos
+        lista.forEach(System.out::println); // Saída: a1 a2 b1 c2 c1
+    }
+}
+
+====================================================================================================
+
+====================================================================================================
+
+====================================================================================================
+
+====================================================================================================
+
+====================================================================================================
+
+====================================================================================================
+
+====================================================================================================
+
+====================================================================================================
